@@ -1,0 +1,39 @@
+.main
+  .main__top
+    .main__top__left
+      .main__top__left__group
+        test
+      .main__top__left__member
+        Member: name
+    .main__top__right
+      .main__top__right__link
+        = link_to "#" do
+          Edit
+  .main__midle
+    .main__midle__list
+      .main__midle__list__user
+        .main__midle__list__user__name
+          masa
+        .main__midle__list__user__date
+          2020/06/01
+      .main__midle__list__message
+        ohayou
+      .main__midle__list__user
+        .main__midle__list__user__name
+          masa
+        .main__midle__list__user__date
+          2020/06/01
+      .main__midle__list__message
+        ohayou
+  .main__bottom
+    = form_for "#" do |form|
+      .main__bottom__form
+        .main__bottom__form__f-area
+          = form.text_field :email
+          %label{class: "main__bottom__form__f-area__icon"}
+            = icon('fas','image')
+            %input{type: "file"}
+        .main__bottom__form__btn
+          = form.submit
+    
+
