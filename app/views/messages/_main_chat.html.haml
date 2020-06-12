@@ -2,38 +2,28 @@
   .main__top
     .main__top__left
       .main__top__left__group
-        test
+        = @group.name
       .main__top__left__member
-        Member: name
+        Member: 
+        - @group.users.each do |user|
+          = user.name
     .main__top__right
       .main__top__right__link
-        = link_to "#" do
+        = link_to edit_group_path(@group) do
           Edit
+
   .main__midle
-    .main__midle__list
-      .main__midle__list__user
-        .main__midle__list__user__name
-          masa
-        .main__midle__list__user__date
-          2020/06/01
-      .main__midle__list__message
-        ohayou
-      .main__midle__list__user
-        .main__midle__list__user__name
-          masa
-        .main__midle__list__user__date
-          2020/06/01
-      .main__midle__list__message
-        ohayou
+    = render @messages
+
   .main__bottom
-    = form_for "#" do |form|
+    = form_for [@group, @message] do |form|
       .main__bottom__form
-        .main__bottom__form__f-area
-          = form.text_field :email
-          %label{class: "main__bottom__form__f-area__icon"}
+        .main__bottom__form__area
+          = form.text_field :content, class:'main__bottom__form__area__field', placeholder:'type a message'
+          = form.label :image, class: "main__bottom__form__area__icon" do
             = icon('fas','image')
-            %input{type: "file"}
+            = form.file_field :image
         .main__bottom__form__btn
-          = form.submit
+          = form.submit 'Send'
     
 

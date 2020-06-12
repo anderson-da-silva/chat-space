@@ -55,13 +55,11 @@ a{
       &__group{
         color: #ffffff;
         font-size: 15px;
-        font-weight: bold;
         margin-bottom: 5px;
       }
       &__message{
         color: #ffffff;
         font-size: 11px;
-        font-weight: bold;
         margin-bottom: 40px;
       }
     }
@@ -96,6 +94,7 @@ a{
       border: #38aef0 solid 1px;
       display: flex;
       align-items: center;
+      cursor: pointer;
       & a{
         color: #38aef0;
       }
@@ -104,9 +103,10 @@ a{
   &__midle{
     height: calc(100% - 190px);
     background-color: #fafafa;
-    &__list{
+    overflow: scroll;
+    &__message{
       padding: 35px 0 0 40px;
-      &__user{
+      &__upper{
         display: flex;
         justify-content: start;
         margin-bottom: 12px;
@@ -121,10 +121,10 @@ a{
           font-size: 12px;
         }
       }
-      &__message{
+      &__lower{
         color: #434a54;
         font-size: 14px;
-        margin-bottom: 46px;
+        margin-bottom: 11px;
       }
     }
   }
@@ -133,28 +133,54 @@ a{
     background-color: #d2d2d2;
     display: flex;
     align-items: center;
-    position: relative; 
+    position: fixed; 
     bottom: 0;
     z-index: 1;
     &__form{
       display: flex;
-      &__f-area{
-      height: 50px;
-      width: calc(100vw - 495px);
-      margin: 0 15px 0 40px;
-      background-color: white;
-      &__icon input{
-        display: none;
-      }
+      &__area{
+        height: 50px;
+        width: calc(100vw - 495px);
+        margin: 0 15px 0 40px;
+        background-color: white;
+        display: flex;
+        &__field{
+          height: 50px;
+          width: calc(100vw - 495px);
+          padding-left: 10px;
+          border: none;
+        }
+        &__icon{
+          position: relative;
+          top: 14px;
+          right: 10px;
+          & i{
+            font-size: 22px;
+            cursor: pointer;
+          }
+          & input{
+            display: none;
+          }
+        }
       }
       &__btn{
         height: 50px;
         width: 100px;
         color: #ffffff;
         background-color: #38aef0;
+        border-width: 2px;
+        border-style: outset;
+        border-color: #767676;
         margin-right: 40px;
         line-height: 50px;
         text-align: center;
+        cursor: pointer;
+        & input{
+          color: white;
+          background-color: #38aef0;
+          border: none;
+          cursor: pointer;
+        }
       }
     }
   }
