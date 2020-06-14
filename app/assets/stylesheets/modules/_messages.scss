@@ -166,19 +166,19 @@ a{
       &__btn{
         height: 50px;
         width: 100px;
-        color: #ffffff;
-        background-color: #38aef0;
-        border-width: 2px;
-        border-style: outset;
-        border-color: #767676;
         margin-right: 40px;
         line-height: 50px;
         text-align: center;
         cursor: pointer;
         & input{
+          color: #ffffff;
+          height: 50px;
+          width: 100px;
           color: white;
           background-color: #38aef0;
-          border: none;
+          border-width: 2px;
+          border-style: outset;
+          border-color: #767676;
           cursor: pointer;
         }
       }
