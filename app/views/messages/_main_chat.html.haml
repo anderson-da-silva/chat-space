@@ -1,14 +1,14 @@
 .main
   .main__top
     .main__top__left
-      .main__top__left__group
+      .main__top__left--group
         = @group.name
-      .main__top__left__member
+      .main__top__left--member
         Member: 
         - @group.users.each do |user|
           = user.name
     .main__top__right
-      .main__top__right__link
+      .main__top__right--link
         = link_to edit_group_path(@group) do
           Edit
 
@@ -19,8 +19,8 @@
     = form_for [@group, @message] do |form|
       .main__bottom__form
         .main__bottom__form__area
-          = form.text_field :content, class:'main__bottom__form__area__field', placeholder:'type a message'
-          = form.label :image, class: "main__bottom__form__area__icon" do
+          = form.text_field :content, class:'main__bottom__form__area--field', placeholder:'type a message'
+          = form.label :image, class: "main__bottom__form__area--icon" do
             = icon('fas','image')
             = form.file_field :image
         .main__bottom__form__btn
