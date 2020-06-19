@@ -66,7 +66,7 @@ $(function(){
   })
 
   var reloadMessages = function() {
-    var last_message_id = $('.message:last').data("message-id");
+    var last_message_id = $('.main__midle__message:last').data("message-id");
     $.ajax({
       url: "api/messages",
       type: 'get',
@@ -74,6 +74,7 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      console.log(messages);
       if (messages.length !== 0) {
         var insertHTML = '';
         $.each(messages, function(i, message) {
@@ -84,6 +85,7 @@ $(function(){
       }
     })
     .fail(function() {
+      console.log("fail");
       alert('error');
     });
   };
