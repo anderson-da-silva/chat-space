@@ -2,23 +2,18 @@
   .sidebar__upper
     .sidebar__upper__user
       .sidebar__upper__user__name
-        masa
+        = current_user.name
       .sidebar__upper__user__icon
-        = link_to "#" do
-          %i.fa.fa-edit
-        = link_to "#" do
-          %i.fa.fa-cog
+        = link_to new_group_path do
+          = icon('fas', 'edit')
+        = link_to edit_user_path(current_user) do
+          = icon('fas', 'cog')
+
   .sidebar__lower
     .sidebar__lower__list
-      .sidebar__lower__list__group
-        techcamp
-      .sidebar__lower__list__message   
-        no message 
-      .sidebar__lower__list__group
-        techcamp
-      .sidebar__lower__list__message   
-        no message       
-      .sidebar__lower__list__group
-        techcamp
-      .sidebar__lower__list__message   
-        no message 
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .sidebar__lower__list__group
+            = group.name
+          .sidebar__lower__list__message   
+            = group.show_last_message

@@ -1,3 +1,5 @@
+@import "config/variable";
+
 * {
   box-sizing: border-box;
 }
@@ -8,15 +10,13 @@
 }
 
 a{
-  color: #ffffff;
+  color: $c-wh;
   text-decoration: none;
 }
 
 .fa{
   margin-left: 5px;
 }
-
-
 
 .sidebar{
   height: 100vh;
@@ -37,10 +37,10 @@ a{
         font-size: 16px;
         font-weight: bold;
         line-height: 20px;
-        color: #ffffff;
+        color: $c-wh;
       }
       &__icon{
-        color: #ffffff;
+        color: $c-wh;
         width: 60px;
         line-height: 20px;
         text-align: right;
@@ -53,15 +53,13 @@ a{
     &__list{
       padding: 20px 20px 0 20px;
       &__group{
-        color: #ffffff;
+        color: $c-wh;
         font-size: 15px;
-        font-weight: bold;
         margin-bottom: 5px;
       }
       &__message{
-        color: #ffffff;
+        color: $c-wh;
         font-size: 11px;
-        font-weight: bold;
         margin-bottom: 40px;
       }
     }
@@ -73,17 +71,17 @@ a{
   width: calc(100vw - 300px);
   &__top{
     height: 100px;
-    background-color: #ffffff;
+    background-color: $c-wh;
     display: flex;
     justify-content: space-between;
     &__left{
       margin: 35px 0 0 40px;
-      &__group{
+      &--group{
         color: #333333;
         font-size: 20px;
         margin-bottom: 15px;
       }
-      &__member{
+      &--member{
         color: #999999;
         font-size: 12px;
       }
@@ -93,20 +91,22 @@ a{
       width: 72px;
       margin: 28px 40px 0 0;
       padding: 0 20px 0 20px;
-      border: #38aef0 solid 1px;
+      border: $c-sb solid 1px;
       display: flex;
       align-items: center;
+      cursor: pointer;
       & a{
-        color: #38aef0;
+        color: $c-sb;
       }
     }
   }
   &__midle{
     height: calc(100% - 190px);
     background-color: #fafafa;
-    &__list{
+    overflow: scroll;
+    &__message{
       padding: 35px 0 0 40px;
-      &__user{
+      &__upper{
         display: flex;
         justify-content: start;
         margin-bottom: 12px;
@@ -121,10 +121,10 @@ a{
           font-size: 12px;
         }
       }
-      &__message{
+      &__lower{
         color: #434a54;
         font-size: 14px;
-        margin-bottom: 46px;
+        margin-bottom: 11px;
       }
     }
   }
@@ -133,30 +133,56 @@ a{
     background-color: #d2d2d2;
     display: flex;
     align-items: center;
-    position: relative; 
+    position: fixed; 
     bottom: 0;
     z-index: 1;
     &__form{
       display: flex;
-      &__f-area{
-      height: 50px;
-      width: calc(100vw - 495px);
-      margin: 0 15px 0 40px;
-      background-color: white;
-      &__icon input{
-        display: none;
-      }
+      &__area{
+        height: 50px;
+        width: calc(100vw - 495px);
+        margin: 0 15px 0 40px;
+        background-color: $c-wh;
+        display: flex;
+        &--field{
+          height: 50px;
+          width: 100%;
+          padding-left: 10px;
+          border: none;
+        }
+        &--icon{
+          position: relative;
+          top: 14px;
+          right: 32px;
+          & i{
+            position: fixed;
+            z-index: 1;
+            font-size: 22px;
+            cursor: pointer;
+          }
+          & input{
+            display: none;
+          }
+        }
       }
       &__btn{
         height: 50px;
         width: 100px;
-        color: #ffffff;
-        background-color: #38aef0;
         margin-right: 40px;
         line-height: 50px;
         text-align: center;
+        cursor: pointer;
+        & input{
+          color: $c-wh;
+          height: 50px;
+          width: 100px;
+          background-color: $c-sb;
+          border-width: 2px;
+          border-style: outset;
+          border-color: #767676;
+          cursor: pointer;
+        }
       }
     }
   }
-
 }
